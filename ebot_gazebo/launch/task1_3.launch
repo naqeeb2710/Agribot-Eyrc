@@ -14,7 +14,8 @@
 	<!-- load tomato plant with greenhouse model -->
 	<include file="$(find tomato_gazebo)/launch/wall_follow.launch"/>
 
-	<!-- Teams can call their controller.py script here, create a node -->
+	<node pkg="ebot_nav" type="controller.py" name="ebot_controller" output="screen"/>
+
 
 
 	<!--  -->
