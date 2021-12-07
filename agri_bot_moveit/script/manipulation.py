@@ -1,0 +1,46 @@
+#! /usr/bin/env python3
+import sys
+import rospy
+import moveit_commander
+
+import geometry_msgs.msg
+moveit_commander.roscpp_initialize(sys.argv)
+rospy.init_node('arm_manipulation', anonymous=True)
+robot = moveit_commander.RobotCommander()
+scene = moveit_commander.PlanningSceneInterface()
+arm_group = moveit_commander.MoveGroupCommander("arm")
+hand_group = moveit_commander.MoveGroupCommander("gripper")
+
+arm_group.set_named_target("turn_left")
+plan1=arm_group.go()
+arm_group.set_named_target("tomato1_grab")
+plan1=arm_group.go()
+hand_group.set_named_target("gripperclose")
+plan2 = hand_group.go()
+arm_group.set_named_target("allzero")
+plan1=arm_group.go()
+hand_group.set_named_target("gripperopen")
+plan2 = hand_group.go()
+arm_group.set_named_target("turn_left")
+plan1=arm_group.go()
+arm_group.set_named_target("tomato2_grab")
+plan1=arm_group.go()
+hand_group.set_named_target("gripperclose")
+plan2 = hand_group.go()
+arm_group.set_named_target("allzero")
+plan1=arm_group.go()
+hand_group.set_named_target("gripperopen")
+plan2 = hand_group.go()
+arm_group.set_named_target("turn_left")
+plan1=arm_group.go()
+arm_group.set_named_target("tomato3_grab")
+plan1=arm_group.go()
+hand_group.set_named_target("gripperclose")
+plan2 = hand_group.go()
+arm_group.set_named_target("allzero")
+plan1=arm_group.go()
+hand_group.set_named_target("gripperopen")
+plan2 = hand_group.go()
+
+rospy.sleep(5)
+moveit_commander.roscpp_shutdown()

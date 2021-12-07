@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: ebot_gazebo
+    relative_path: urdf/agri_bot.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/agribot.srdf
+  CONFIG:
+    author_name: Naqeeb Ahmed
+    author_email: naqeeb532@outlook.com
+    generated_timestamp: 1638911021
