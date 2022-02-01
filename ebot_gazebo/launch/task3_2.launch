@@ -18,7 +18,7 @@
     <include file="$(find tomato_gazebo)/launch/tomato_plant_single.launch"/>
 
     <!-- include your manipulation launch file from agri_bot_moveit package -->
-  
+    <include file="$(find agri_bot_moveit)/launch/ur5_bringup_moveit.launch"/>
 
     <!-- include your tomato detection script -->
 
